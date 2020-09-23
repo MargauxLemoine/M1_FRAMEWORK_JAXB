@@ -16,13 +16,14 @@ public class ExoTest {
 
 	@Test
 	public void exo1() throws JAXBException {
-//		JAXBContext context = JAXBContext.newInstance(Panier.class);
-//		Unmarshaller unMarshaller = context.createUnmarshaller();
-//
-//		Panier p = (Panier) unMarshaller.unmarshal(new File("src/test/resources/panier.xml"));
-//		assertTrue(p.total == 36.0);
-//		assertTrue(p.client.getFname().equals("Nicolas"));
-//		assertTrue(p.getArticles().get(0).getDenomination().equals("Souris"));
+		JAXBContext context = JAXBContext.newInstance(Panier.class);
+		Unmarshaller unMarshaller = context.createUnmarshaller();
+
+		Panier p = (Panier) unMarshaller.unmarshal(new File("src/test/resources/panier.xml"));
+		assertTrue(p.total == 36.0);
+		assertTrue(p.client.getFname().equals("Nicolas"));
+		System.out.println(p.getArticles().get(0).getDenomination());
+		assertTrue(p.getArticles().get(0).getDenomination().equals("Souris"));
 	}
 
 }
